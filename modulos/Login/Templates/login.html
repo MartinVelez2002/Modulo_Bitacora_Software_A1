@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+{% block NombreModo %}
+    <h3 class="text-white text-center">Login</h3>
+{% endblock %}
+
+{% block main %}
+
+    <h1 class="text-center mt-3 mb-5"> Módulo de Bitácora</h1>
+
+    <div class="container login">
+
+            <h2 class="text-center text-white mt-3"><b>Iniciar Sesión</b></h2>
+
+            <label class="fs-5 mt-4 text-white" for="usuario"> <b>Usuario:</b> </label>
+            <input class="form-control " id="usuario" placeholder="Ingrese su Usuario" type="text">
+
+
+            <label class="fs-5 mt-4 text-white" for="usuario"><b>Contraseña:</b></label>
+            <input class="form-control " id="usuario" placeholder="Ingrese su Contraseña" type="text">
+
+        <div class="d-flex justify-content-center align-self-center mt-5">
+            <button class="btn-login text-white"> <b> Ingresar </b></button>
+        </div>
+    </div>
+
+{% endblock %}

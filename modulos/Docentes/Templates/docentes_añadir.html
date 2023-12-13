@@ -1,0 +1,56 @@
+{% extends 'FormTemplate.html' %}
+{% load static %}
+
+{% block formulario %}
+    <div>
+        {{ form.as_p }}
+    </div>
+
+{% endblock %}
+{% block presentar_datos %}
+    <div class="mx-3">
+        <h4 class="text-center">{{ titulo_list }}</h4>
+        <table class="container table table-responsive">
+            <thead>
+            <tr>
+                <th> Nombre</th>
+                <th> Apellido</th>
+                <th> Correo</th>
+                <th> Acciones</th>
+            </tr>
+            </thead>
+
+            <tbody>
+
+            {% for objects in docentes %}
+
+                <tr>
+                    <td> {{ objects.nombre }} </td>
+                    <td> {{ objects.apellido }}</td>
+                    <td> {{ objects.correo }} </td>
+                    <td>
+                        <div class="btn-accion">
+                            <div class="cab-tool">
+                                <a class="text-decoration-none" href="{% url 'docentes:editar_docente' objects.id %}">
+                                    <i class="ri-edit-2-line text-dark"></i>
+                                    <span class="tooltip-infor-icon"> Editar datos </span>
+                                </a>
+                            </div>
+
+                            <div class="cab-tool">
+                                <a class="text-decoration-none" href="{% url 'docentes:eliminar_docente' objects.id %}">
+                                    <i class="ri-eraser-line text-dark"></i>
+                                    <span class="tooltip-infor-icon"> Eliminar registro </span>
+                                </a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+
+
+            {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
